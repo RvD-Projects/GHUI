@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { useState } from "react";
 import { ColorResult, SketchPicker } from "react-color";
 
@@ -5,12 +6,15 @@ export interface ColorPickerProps {
   color?: string;
   label?: string;
   onChange?: (color: string) => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
   color = "#fff",
-  label = "",
+  label,
   onChange,
+  ...props
 }) => {
   const [selectedColor, setSelectedColor] = useState(color);
 
@@ -22,8 +26,12 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   };
 
   return (
-    <div className="text-center">
-      {/* {label && <Typography variant="subtitle1">{label}</Typography>} */}
+    <div>
+      {label && (
+        <Typography variant="subtitle1" style={{ marginBottom: 8 }}>
+          {label}
+        </Typography>
+      )}
       <SketchPicker color={selectedColor} onChange={handleChange} />
     </div>
   );

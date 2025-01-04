@@ -33,7 +33,21 @@ export default function App() {
         </Typography>
       </div>
       <div className="m-4">
-        <ColorPickerInput label="Option 1" color={colors.purple[500]} />
+        <ColorPickerInput
+          className="my-1"
+          label="Option 1"
+          color={colors.red[500]}
+        />
+        <ColorPickerInput
+          className="my-1"
+          label="Option 1"
+          color={colors.green[500]}
+        />
+        <ColorPickerInput
+          className="my-1"
+          label="Option 1"
+          color={colors.blue[500]}
+        />
       </div>
       <Copyright />
     </Container>

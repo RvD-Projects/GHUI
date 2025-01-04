@@ -12,6 +12,7 @@ const ColorPickerInput: React.FC<ColorPickerProps> = ({
   color = "#fff",
   label = "",
   onChange,
+  ...props
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [selectedColor, setSelectedColor] = useState(color);
@@ -43,7 +44,7 @@ const ColorPickerInput: React.FC<ColorPickerProps> = ({
   const id = open ? "color-picker-popover" : undefined;
 
   return (
-    <div>
+    <div {...props}>
       <TextField
         value={selectedColor}
         onChange={handleInputChange}
