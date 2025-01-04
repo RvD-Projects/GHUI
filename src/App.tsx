@@ -1,10 +1,9 @@
-import * as React from "react";
+import { colors } from "@mui/material";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
-import Slider from "@mui/material/Slider";
-import PopoverMenu from "./PopoverMenu";
-import ProTip from "./ProTip";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import ColorPickerInput from "./components/ColorPickerInput";
 
 function Copyright() {
   return (
@@ -28,20 +27,15 @@ function Copyright() {
 export default function App() {
   return (
     <Container maxWidth="sm">
-      <div className="my-4">
+      <div className="m-4">
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Material UI Create React App example with Tailwind CSS in TypeScript
+          GHUI
         </Typography>
-        <Slider
-          className="my-4"
-          defaultValue={30}
-          classes={{ active: "shadow-none" }}
-          slotProps={{ thumb: { className: "hover:shadow-none" } }}
-        />
-        <PopoverMenu />
-        <ProTip />
-        <Copyright />
       </div>
+      <div className="m-4">
+        <ColorPickerInput label="Option 1" color={colors.purple[500]} />
+      </div>
+      <Copyright />
     </Container>
   );
 }
