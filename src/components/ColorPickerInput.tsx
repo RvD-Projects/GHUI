@@ -53,7 +53,7 @@ const ColorPickerInput: React.FC<ColorPickerProps> = ({
           startAdornment: (
             <InputAdornment position="start">
               {label && (
-                <Typography variant="subtitle1" color={colors.grey[400]}>
+                <Typography variant="subtitle1" color={colors.grey[500]}>
                   {label.concat(": ")}
                 </Typography>
               )}

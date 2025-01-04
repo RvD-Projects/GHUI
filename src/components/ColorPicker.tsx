@@ -28,7 +28,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   return (
     <div>
       {label && (
-        <Typography variant="subtitle1" style={{ marginBottom: 8 }}>
+        <Typography variant="subtitle1" className="mb-1 text-center">
           {label}
         </Typography>
       )}
