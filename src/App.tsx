@@ -1,9 +1,10 @@
-import { colors } from "@mui/material";
+import { FormControlLabel, FormGroup } from "@mui/material";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import ColorPickerInput from "./components/ColorPickerInput";
+import MSwitch from "./components/Switch";
 
 function Copyright() {
   return (
@@ -28,29 +29,32 @@ function Copyright() {
 
 export default function App() {
   return (
-    <Container
-      maxWidth="sm"
-      className="h-full flex flex-col justify-center text-center"
-    >
-      <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
+    <Container>
+      <Typography
+        variant="h4"
+        component="h1"
+        sx={{ mb: 2 }}
+        className="text-center"
+      >
         GHUI
       </Typography>
+      <div className="bg-slate-200 p-4 rounded-lg shadow-md">
+        <FormGroup className="gap-4 ">
+          <FormControlLabel
+            label="Color 1"
+            labelPlacement="start"
+            className="flex justify-between"
+            control={<ColorPickerInput />}
+          />
 
-      <ColorPickerInput
-        className="my-1"
-        label="Option 1"
-        color={colors.red[500]}
-      />
-      <ColorPickerInput
-        className="my-1"
-        label="Option 1"
-        color={colors.green[500]}
-      />
-      <ColorPickerInput
-        className="my-1"
-        label="Option 1"
-        color={colors.blue[500]}
-      />
+          <FormControlLabel
+            label="Switch 1"
+            labelPlacement="start"
+            className="flex justify-between"
+            control={<MSwitch />}
+          />
+        </FormGroup>
+      </div>
 
       <Copyright />
     </Container>
